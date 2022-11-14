@@ -1,136 +1,283 @@
-export class Robot {
-  head: string = '';
-  body: string = '';
-  arms: string = '';
-  legs: string = '';
-  weapon: string = '';
-  shield: string = '';
-  wings: string = '';
+class Robot {
+  head?: string;
+  body?: string;
+  arms?: string;
+  legs?: string;
+  armor?: string;
+  sword?: string;
+  shield?: string;
+  wings?: string;
+  constructor() {}
+
+  introduce() {
+    return JSON.stringify(this);
+  }
+
+  doTheJob() {
+    return `${this.introduce()} - I am doing my job!`;
+  }
 }
 
-export interface RobotBuilder {
-  addHead(): void;
-  addArms(): void;
-  addLegs(): void;
-  addWeapon(): void;
-  addShield(): void;
-  addWings(): void;
-  getRobot(): Robot;
-}
+class RobotBuilder {
+  robot: Robot;
+  constructor() {
+    this.robot = new Robot();
+  }
 
-export class FighterRobotBuilder implements RobotBuilder {
-  private robot: Robot = new Robot();
-  addHead(): void {
-    this.robot.head = 'Fighter Head';
+  addHead() {
+    this.robot.head = 'Default head';
+    return this;
   }
-  addArms(): void {
-    this.robot.arms = 'Fighter Arms';
+
+  addBody() {
+    this.robot.body = 'Default body';
+    return this;
   }
-  addLegs(): void {
-    this.robot.legs = 'Fighter Legs';
+
+  addArms() {
+    this.robot.arms = 'Default arms';
+    return this;
   }
-  addWeapon(): void {
-    this.robot.weapon = 'Fighter Weapon';
+
+  addLegs() {
+    this.robot.legs = 'Default legs';
+    return this;
   }
-  addShield(): void {
-    this.robot.shield = 'Fighter Shield';
+
+  addArmor() {
+    this.robot.armor = 'Default armor';
+    return this;
   }
-  addWings(): void {
-    this.robot.wings = '';
+
+  addSword() {
+    this.robot.sword = 'Default sword';
+    return this;
   }
-  getRobot(): Robot {
+
+  addShield() {
+    this.robot.shield = 'Default shield';
+    return this;
+  }
+
+  addWings() {
+    this.robot.wings = 'Default wings';
+    return this;
+  }
+
+  makeRobot() {
     return this.robot;
   }
+
+  reset() {
+    this.robot = new Robot();
+    return this;
+  }
 }
 
-export class FarmerRobotBuilder implements RobotBuilder {
-  private robot: Robot = new Robot();
-  addHead(): void {
-    this.robot.head = 'Farmer Head';
+class FighterRobotBuilder implements RobotBuilder {
+  robot: Robot;
+  constructor() {
+    this.robot = new Robot();
   }
-  addArms(): void {
-    this.robot.arms = 'Farmer Arms';
+
+  addHead() {
+    this.robot.head = 'Fighter head';
+    return this;
   }
-  addLegs(): void {
-    this.robot.legs = 'Farmer Legs';
+
+  addBody() {
+    this.robot.body = 'Fighter body';
+    return this;
   }
-  addWeapon(): void {
-    this.robot.weapon = '';
+
+  addArms() {
+    this.robot.arms = 'Fighter arms';
+    return this;
   }
-  addShield(): void {
-    this.robot.shield = '';
+
+  addLegs() {
+    this.robot.legs = 'Fighter legs';
+    return this;
   }
-  addWings(): void {
-    this.robot.wings = '';
+
+  addArmor() {
+    this.robot.armor = 'Fighter armor';
+    return this;
   }
-  getRobot(): Robot {
+
+  addSword() {
+    this.robot.sword = 'Fighter sword';
+    return this;
+  }
+
+  addShield() {
+    this.robot.shield = 'Fighter shield';
+    return this;
+  }
+
+  addWings() {
+    this.robot.wings = 'Fighter wings';
+    return this;
+  }
+
+  makeRobot() {
     return this.robot;
   }
+
+  reset() {
+    this.robot = new Robot();
+    return this;
+  }
 }
 
-export class FlyRobotBuilder implements RobotBuilder {
-  private robot: Robot = new Robot();
-  addHead(): void {
-    this.robot.head = 'Fly Head';
+class FarmerRobotBuilder implements RobotBuilder {
+  robot: Robot;
+  constructor() {
+    this.robot = new Robot();
   }
-  addArms(): void {
-    this.robot.arms = 'Fly Arms';
+
+  addHead() {
+    this.robot.head = 'Farmer head';
+    return this;
   }
-  addLegs(): void {
-    this.robot.legs = 'Fly Legs';
+
+  addBody() {
+    this.robot.body = 'Farmer body';
+    return this;
   }
-  addWeapon(): void {
-    this.robot.weapon = '';
+
+  addArms() {
+    this.robot.arms = 'Farmer arms';
+    return this;
   }
-  addShield(): void {
-    this.robot.shield = '';
+
+  addLegs() {
+    this.robot.legs = 'Farmer wheels';
+    return this;
   }
-  addWings(): void {
-    this.robot.wings = 'Fly Wings';
+
+  addArmor() {
+    this.robot.armor = 'Farmer armor';
+    return this;
   }
-  getRobot(): Robot {
+
+  addSword() {
+    this.robot.sword = 'Farmer sword';
+    return this;
+  }
+
+  addShield() {
+    this.robot.shield = 'Farmer shield';
+    return this;
+  }
+
+  addWings() {
+    this.robot.wings = 'Farmer wings';
+    return this;
+  }
+
+  makeRobot() {
     return this.robot;
   }
+
+  reset() {
+    this.robot = new Robot();
+    return this;
+  }
 }
 
-export class Director {
-  makeFighterRobot(builder: RobotBuilder): Robot {
-    builder.addHead();
-    builder.addArms();
-    builder.addLegs();
-    builder.addWeapon();
-    builder.addShield();
-    return builder.getRobot();
+class FlyRobotBuilder implements RobotBuilder {
+  robot: Robot;
+  constructor() {
+    this.robot = new Robot();
   }
 
-  makeFarmerRobot(builder: RobotBuilder): Robot {
-    builder.addHead();
-    builder.addArms();
-    builder.addLegs();
-    return builder.getRobot();
+  addHead() {
+    this.robot.head = 'Fly head';
+    return this;
   }
 
-  makeFlyRobot(builder: RobotBuilder): Robot {
-    builder.addHead();
-    builder.addArms();
-    builder.addLegs();
-    builder.addWings();
-    return builder.getRobot();
+  addBody() {
+    this.robot.body = 'Fly body';
+    return this;
+  }
+
+  addArms() {
+    this.robot.arms = 'Fly arms';
+    return this;
+  }
+
+  addLegs() {
+    this.robot.legs = 'Fly legs';
+    return this;
+  }
+
+  addArmor() {
+    this.robot.armor = 'Fly armor';
+    return this;
+  }
+
+  addSword() {
+    this.robot.sword = 'Fly sword';
+    return this;
+  }
+
+  addShield() {
+    this.robot.shield = 'Fly shield';
+    return this;
+  }
+
+  addWings() {
+    this.robot.wings = 'Fly wings';
+    return this;
+  }
+
+  makeRobot() {
+    return this.robot;
+  }
+
+  reset() {
+    this.robot = new Robot();
+    return this;
+  }
+}
+
+class RobotMakingDirector {
+  makeFighterRobot(robotBuilder: RobotBuilder): Robot {
+    robotBuilder
+      .addHead()
+      .addBody()
+      .addArms()
+      .addLegs()
+      .addArmor()
+      .addSword()
+      .addShield();
+    return robotBuilder.makeRobot();
+  }
+
+  makeFarmerRobot(robotBuilder: RobotBuilder): Robot {
+    robotBuilder.addHead().addBody().addArms().addLegs();
+    return robotBuilder.makeRobot();
+  }
+
+  makeFlyRobot(robotBuilder: RobotBuilder): Robot {
+    robotBuilder.addHead().addBody().addArms().addLegs().addWings();
+    return robotBuilder.makeRobot();
   }
 }
 
 function client() {
-  const director = new Director();
-  const fighterRobotBuilder = new FighterRobotBuilder();
-  const farmerRobotBuilder = new FarmerRobotBuilder();
-  const flyRobotBuilder = new FlyRobotBuilder();
-  const fighterRobot = director.makeFighterRobot(fighterRobotBuilder);
-  const farmerRobot = director.makeFarmerRobot(farmerRobotBuilder);
-  const flyRobot = director.makeFlyRobot(flyRobotBuilder);
+  const robotMakingDirector = new RobotMakingDirector();
+  const fighterBuilder: RobotBuilder = new FighterRobotBuilder();
+  const farmerBuilder: RobotBuilder = new FarmerRobotBuilder();
+  const flyBuilder: RobotBuilder = new FlyRobotBuilder();
 
-  console.log(flyRobot);
-  console.log(fighterRobot);
-  console.log(farmerRobot);
+  const fighterRobot: Robot =
+    robotMakingDirector.makeFighterRobot(fighterBuilder);
+  const farmerRobot: Robot = robotMakingDirector.makeFarmerRobot(farmerBuilder);
+  const flyRobot: Robot = robotMakingDirector.makeFlyRobot(flyBuilder);
+
+  console.log(fighterRobot.doTheJob());
+  console.log(farmerRobot.doTheJob());
+  console.log(flyRobot.doTheJob());
 }
-
-client();
