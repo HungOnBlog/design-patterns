@@ -11,3 +11,5 @@
 ## [5. Bridge Pattern](https://hungon.space/index.php/2022/11/17/design-pattern-bridge/)
 
 ## [6. Composite Pattern](https://hungon.space/index.php/2022/11/19/design-pattern-composite/)
+
+## [7. Decorator Pattern](https://hungon.space/index.php/2022/11/19/design-pattern-decorator/)
