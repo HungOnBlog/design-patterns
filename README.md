@@ -15,3 +15,5 @@
 ## [7. Decorator Pattern](https://hungon.space/index.php/2022/11/19/design-pattern-decorator/)
 
 ## [8. Facade Pattern](https://hungon.space/index.php/2022/11/20/design-pattern-facade/)
+
+## [9. Flyweight Pattern](https://hungon.space/index.php/2022/11/22/design-pattern-flyweight/)
