@@ -17,3 +17,7 @@
 ## [8. Facade Pattern](https://hungon.space/index.php/2022/11/20/design-pattern-facade/)
 
 ## [9. Flyweight Pattern](https://hungon.space/index.php/2022/11/22/design-pattern-flyweight/)
+
+## [10. Proxy Pattern](https://hungon.space/index.php/2022/11/23/design-pattern-proxy/)
+
+## [11. Chain of Responsibility](https://hungon.space/index.php/2022/11/23/design-patter-chain-of-responsibility/)
